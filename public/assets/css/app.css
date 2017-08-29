@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body{
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    background-color: #E1DBA8;
+    color:#4A4A3B;
+}
+
+/* Geral config */
+
+
+#container {
+    padding: 0;
+}
+
+nav{
+    margin-bottom: 5px;
+}
+
+#contents-section{
+    clear: both;
+    margin:0 auto;
+}
+
+.content-index {
+    text-align: center;
+    background-color: #CACAA1;
+    min-height: 55vh;
+}
+#content {
+    margin: auto;
+    max-width: 1024px;
+}
+/*Navbar section*/
+
+.classBtnHover{
+    text-align: center;
+    border: 1px solid #CACAA1;
+}
+
+.classBtnHover:hover{
+    border: 1px solid #3A6428;
+    background-color: #E1DBA8;
+    border-radius: 5px 22px;
+    transition: all 0.9s;
+}
+
+/* index site */
+#carouselIndex{
+    text-align: center;
+    height: 220px;
+}
+#carouselIndex img {
+    height: 220px;
+}
+
+#news th{
+    text-align: center;
+}
+/* footer section*/
+footer#footer {
+    bottom: 0;
+    margin-top: 5px;
+    text-align: center;
+    height: 50px;
+    display: table;
+    padding-top: 14px;
+}
