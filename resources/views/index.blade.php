@@ -42,13 +42,11 @@
                 </tr>
                 </thead>
                 @foreach($noticias as $news)
-
                         <tr>
                             <td><a class="" href="/noticias/show/{{$news->id}}">{{$news->updated_at}} </a></td>
                             <td><a class="" href="/noticias/show/{{$news->id}}">{{$news->title}}</a></td>
                             <td><a class="" href="/noticias/show/{{$news->id}}">{{$news->users}}</a></td>
                         </tr>
-
                 @endforeach
                 <tbody>
                 </tbody>
