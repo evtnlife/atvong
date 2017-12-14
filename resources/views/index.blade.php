@@ -2,50 +2,55 @@
 
 @section('content')
     <div id="carouselIndex" class="container-fluid">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        @if(isset($photosCoursel) and $photosCoursel->count() > 0)
+        <div id="slide" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                @for($i = 0; $i < $photosCoursel->count(); $i++)
+                    <li data-target="#slide" data-slide-to="{{$i}}" class="{{$i==0?'active':''}}"></li>
+                @endfor
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="..." alt="First slide">
+                <?php $cont = 0; ?>
+                @foreach($photosCoursel as $photo)
+                <div class="carousel-item {{$cont==0?'active':''}}">
+                    <img style="margin: 0 auto;"  class="d-block img-fluid"  src="{{$photo->path}}" alt="{{$photo['message']}}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p class="alert-light" style="background-color:black; opacity: 0.5; font-size:20px;"><span style="color: white;">{{$photo->message}}</span></p>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="..." alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="..." alt="Third slide">
-                </div>
+                    <?php $cont++; ?>
+                @endforeach
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+
+            <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next " href="#slide" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+
         </div>
+        @endif
     </div>
 
     <div class="container content-index">
         <div id="news">
             <h1>Noticias Recentes</h1>
-            <table class="table table-hover table-sm ">
+            <table class="table table-hover table-sm" >
                 <thead>
-                <tr>
-                    <th width="15%">Data</th>
-                    <th width="60%">Noticia</th>
-                    <th>Autor</th>
+                <tr >
+                    <th>DATA</th>
+                    <th>NOTÍCIA</th>
+                    <th>AUTOR</th>
                 </tr>
                 </thead>
                 @foreach($noticias as $news)
                         <tr>
-                            <td><a class="" href="/noticias/show/{{$news->id}}">{{$news->updated_at}} </a></td>
-                            <td><a class="" href="/noticias/show/{{$news->id}}">{{$news->title}}</a></td>
-                            <td><a class="" href="/noticias/show/{{$news->id}}">{{$news->users}}</a></td>
+                            <td><a class="linkNews" href="/noticias/{{$news->id}}">{{$news->updated_at->format('d/m - h:i')}} </a></td>
+                            <td><a class="linkNews" href="/noticias/{{$news->id}}">{{$news->title}}</a></td>
+                            <td><a class="linkNews" href="/noticias/{{$news->id}}">{{$news->user->name}}</a></td>
                         </tr>
                 @endforeach
                 <tbody>
@@ -53,11 +58,24 @@
             </table>
         </div>
         <div id="Eventos">
-            <h1>Proximos Eventos</h1>
+            @foreach($events as $event)
+                <tr class="linkNews">
+                    <td><a class="linkNews" href="/event/{{$news->id}}">{{$news->updated_at->format('d/m - h:i')}} </a></td>
+                    <td><a class="linkNews" href="/eventos/{{$news->id}}">{{$news->title}}</a></td>
+                    <td><a class="linkNews" href="/noticias/{{$news->id}}">{{$news->user->name}}</a></td>
+                </tr>
+            @endforeach
         </div>
 
         <div id="recent-photos">
             <h1>Fotos Recentes</h1>
+            <figure class="figure">
+                <img src="..." class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                <figcaption class="figure-caption text-right">A caption for the above image.</figcaption>
+            </figure>
         </div>
+
     </div>
+
+
 @endsection

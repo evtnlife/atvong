@@ -27,7 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    protected function noticias(){
-        return $this->hasMany('App\Noticia');
+    protected function news(){
+        return $this->hasMany('App\Noticia', 'user_id');
+    }
+
+    protected function events(){
+        return $this->hasMany('App\Event', 'user_id');
     }
 }

@@ -1,6 +1,6 @@
-@extends('template.app')
+@extends('painel.painelIndex')
 
-@section('content')
+@section('content-painel')
     <div class="container content-index">
         @if(isset(Auth::user()->nivel) and Auth::user()->nivel == 1)
             <h1>Adicionar Noticia</h1>
@@ -20,7 +20,7 @@
                        value="{{old('title')}}"/>
                 <br/>
 
-                <textarea name="noticia" id="summernote">{{old('noticia')}}</textarea>
+                <textarea name="notice" id="summernote">{{old('notice')}}</textarea>
                 <br/>
                 <button type="submit" class="btn btn-primary">Criar Noticia</button>
             </form>

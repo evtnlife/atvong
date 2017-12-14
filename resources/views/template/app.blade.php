@@ -2,37 +2,40 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>{{$title or 'Pagina Inicial'}}</title>
 
+    <title>{{$title or 'Pagina Inicial'}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ elixir('assets/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ elixir('assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ elixir('assets/css/painel.css') }}">
     <link rel="stylesheet" href="{{ elixir('assets/plugins/summernote/summernote.css') }}">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
 <div id="container" class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CACAA1;">
-        <a class="navbar-brand" href="#">ACATV</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" style="color: yellowgreen" href="#">ACATV</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link classBtnHover" href="{{route('indexPrincipal')}}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link classBtnHover" href="#">Sobre nós</a>
+                    <a class="nav-link classBtnHover" href="/sobre">Sobre nós</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link classBtnHover" href="#">Eventos</a>
+                    <a class="nav-link classBtnHover" href="/eventos">Eventos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link classBtnHover" href="#">Album de Fotos</a>
+                    <a class="nav-link classBtnHover" href="/album">Album de Fotos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link classBtnHover" href="#">Contato</a>
+                    <a class="nav-link classBtnHover" href="/contato">Contato</a>
                 </li>
             </ul>
             @if($errors->has('email'))
@@ -55,9 +58,9 @@
                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ Auth::user()->name }}
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right" style="background-color: #CACAA1;">
+                        <div class="dropdown-menu dropdown-menu-right" style="background-color: #092E20;">
                             @if(Auth::user()->nivel == 1)
-                            <button class="dropdown-item" type="button">Painel</button>
+                            <button class="dropdown-item" onclick="window.location.href='{{route('painelIndex')}}'" type="button">Painel</button>
                             <button class="dropdown-item" type="button">Mensagens</button>
                             @endif
                             <button class="dropdown-item" type="button">Perfil</button>
@@ -80,23 +83,37 @@
             @yield('content')
         </div>
     </section>
-    <footer id="footer" class="footer container-fluid" style="background-color: #CACAA1;">
+    <footer id="footer" class="footer container-fluid" >
         Desenvolvido por Everton Silva
     </footer>
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
 <script src="{{ elixir('assets/js/bootstrap.min.js' )}}"></script>
-<script src="{{ elixir('assets/plugins/summernote/summernote.min.js' )}}"></script>
+<script src="{{ elixir('assets/plugins/summernote/summernote.js' )}}"></script>
+
 <script>
     $(document).ready(function() {
         $('#summernote').summernote({
             height: 300,
             maxHeight: 500
         });
+        $("img").addClass("img-responsive");
     });
+
 </script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $( function() {
+        $( "#dataEvent" ).datepicker();
+    } );
+</script>
+
 </body>
 </html>

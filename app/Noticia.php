@@ -8,18 +8,18 @@ class Noticia extends Model
 {
     protected $fillable = [
         'title',
-        'noticia',
+        'notice',
         'user_id',
         'photos_id'
     ];
 
     protected function user(){
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public $rules = [
-        'title'  => 'min:10|max:100|required',
-        'noticia' => 'min:100|required'
+        'title'  => 'min:5|max:70|required',
+        'notice' => 'min:10|required'
     ];
 
     protected $guarded = [
@@ -28,6 +28,6 @@ class Noticia extends Model
     ];
 //
 //    public function photos(){
-//        return $this->hasMany('app\Photo');
+//        return $this->hasMany('app\Photo1]');
 //    }
 }

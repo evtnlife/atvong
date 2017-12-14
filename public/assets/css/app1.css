@@ -1,0 +1,142 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body{
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    background-color: #3A539B;
+    color:white;
+}
+
+/* Geral config */
+.linkNews{
+    display: block;
+    color:white;
+    text-decoration: none;
+}
+.linkNews:hover{
+
+    display: block;
+    color:#1E8BC3;
+    text-decoration: none;
+}
+#container {
+    padding: 0;
+}
+
+#contents-section{
+    clear: both;
+    margin:0 auto;
+}
+
+.content-index {
+    text-align: center;
+    background-color: #22313F;
+    border-radius: 4px;
+    padding: 5px;
+    min-height: 100vh;
+}
+
+.content-index tr td{
+    text-align: left;
+}
+
+#content {
+    margin: auto;
+    max-width: 900px;
+}
+
+/*Navbar section*/
+
+.classBtnHover{
+    text-align: center;
+    color:white;
+}
+
+.classBtnHover:hover{
+    border-radius: 5px 22px;
+    transition: all 0.9s;
+    color:#1E8BC3;
+}
+
+nav{
+    min-height: 65px;
+    margin-bottom: 5px;
+}
+
+.navBtns{
+    width:200px;
+}
+
+
+/* index site */
+#carouselIndex{
+    text-align: center;
+    height: 220px;
+}
+#carouselIndex img {
+    height: 220px;
+}
+
+#news{
+}
+#news th{
+    text-align: center;
+}
+/* footer section*/
+footer#footer {
+    bottom: 0;
+    margin-top: 5px;
+    text-align: center;
+    height: 50px;
+    display: table;
+    padding-top: 14px;
+}
+
+
+/*Eventos */
+
+
+
+/*album*/
+
+#figures {
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+
+#fig{
+    display: table;
+    margin: 0 auto;
+}
+.img-album:hover {
+    transition: all 0.5s;
+}
+
+figure.figImage {
+    width: 200px;
+    position: relative;
+    margin: 5px;
+    border: 5px solid white;
+    box-shadow: 1px 1px 4px black;
+    float: left;
+}
+
+figure.figImage img{
+    width: 100%;
+    height: 100%;
+}
+figure.figImage figcaption {
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    transition: opacity 0.5s;
+}
+figure.figImage:hover figcaption{
+    opacity: 1;
+}

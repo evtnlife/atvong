@@ -1327,16 +1327,16 @@ pre code {
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid yellowgreen;
 }
 
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #e9ecef;
+  border-bottom: 2px solid yellowgreen;
 }
 
 .table tbody + tbody {
-  border-top: 2px solid #e9ecef;
+  border-top: 2px solid yellowgreen;
 }
 
 .table .table {
@@ -2019,15 +2019,15 @@ fieldset[disabled] a.btn {
 }
 
 .btn-secondary {
-  color: #fff;
-  background-color: #868e96;
-  border-color: #868e96;
+  color: yellowgreen;
+  background-color: #092E20;
+  border-color: yellowgreen;
 }
 
 .btn-secondary:hover {
-  color: #fff;
-  background-color: #727b84;
-  border-color: #6c757d;
+  color: white;
+  background-color: #092E20;
+  border-color: yellowgreen;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
@@ -2041,9 +2041,9 @@ fieldset[disabled] a.btn {
 
 .btn-secondary:active, .btn-secondary.active,
 .show > .btn-secondary.dropdown-toggle {
-  background-color: #727b84;
+  background-color: #092E20;
   background-image: none;
-  border-color: #6c757d;
+  border-color: yellowgreen;
 }
 
 .btn-success {
@@ -2604,7 +2604,7 @@ tbody.collapse.show {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: normal;
-  color: #212529;
+  color: white;
   text-align: inherit;
   white-space: nowrap;
   background: none;
@@ -2614,7 +2614,7 @@ tbody.collapse.show {
 .dropdown-item:focus, .dropdown-item:hover {
   color: #16181b;
   text-decoration: none;
-  background-color: #D7D7AB;
+  background-color: yellowgreen;
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -3318,7 +3318,7 @@ tbody.collapse.show {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
-  background: transparent;
+  background: yellowgreen ;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
@@ -3571,19 +3571,19 @@ tbody.collapse.show {
 }
 
 .navbar-light .navbar-brand {
-  color: rgba(0, 0, 0, 0.9);
+  /*color: rgba(0, 0, 0, 0.9);*/
 }
 
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-  color: rgba(0, 0, 0, 0.9);
+  /*color: rgba(0, 0, 0, 0.9);*/
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5);
+
 }
 
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-  color: rgba(0, 0, 0, 0.7);
+
 }
 
 .navbar-light .navbar-nav .nav-link.disabled {
